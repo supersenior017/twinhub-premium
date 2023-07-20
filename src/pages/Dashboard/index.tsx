@@ -17,6 +17,7 @@ import { useContext, useEffect, useState } from "react"
 import { SearchIcon } from "@chakra-ui/icons"
 import { AppContext, BackendUrl, personaProps } from "../../constants"
 import Loader from "components/Loader"
+import Confirmation from "components/Confirmation"
 
 const Dashboard = () => {
     const [search, setSearch] = useState("")
@@ -26,74 +27,88 @@ const Dashboard = () => {
     const personas = contextData?.personas
 
     return (
-        <Box p={4} mt={"80px"} color={"#FFF"}>
-            <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
-                <Heading
-                    fontSize={{ base: "2xl", sm: "4xl" }}
-                    fontWeight={"bold"}
+        <>
+            <Box p={4} mt={"80px"} color={"#FFF"}>
+                <Stack
+                    spacing={4}
+                    as={Container}
+                    maxW={"3xl"}
+                    textAlign={"center"}
                 >
-                    Who do you want to call?
-                </Heading>
-                <Flex
-                    alignItems={"center"}
-                    gap={"10px"}
-                    justifyContent={"center"}
-                    flexDirection={{
-                        sm: "column",
-                        md: "row"
-                    }}
-                >
-                    <Text color={"#FFB7EB"} fontSize={{ base: "sm", sm: "lg" }}>
-                        Search your favorite user
-                    </Text>
-                    <InputGroup
-                        cursor="pointer"
-                        bg={"#AE3E7A"}
-                        borderRadius="15px"
-                        borderColor="#F178B8"
-                        w={{
-                            sm: "80%",
-                            md: "256px"
-                        }}
-                        mx={{ sm: "auto", md: "inherit" }}
-                        me={{ sm: "auto", md: "20px" }}
+                    <Heading
+                        fontSize={{ base: "2xl", sm: "4xl" }}
+                        fontWeight={"bold"}
                     >
-                        <InputLeftElement
-                            children={
-                                <SearchIcon color={"#FFF"} w="15px" h="15px" />
-                            }
-                        />
-                        <Input
-                            fontSize="xs"
-                            py="11px"
-                            color={"gray.400"}
-                            placeholder="Type here..."
-                            borderRadius="inherit"
-                            value={search}
-                            onChange={(el) => setSearch(el.target.value)}
-                        />
-                    </InputGroup>
-                </Flex>
-            </Stack>
-            <Container
-                maxW={{
-                    base: "100%",
-                    lg: "80%",
-                    "2xl": "60%"
-                }}
-                mt={12}
-            >
-                <Flex flexWrap="wrap" gridGap={"6px"} justify="center">
-                    {personas
-                        ?.filter((val) =>
-                            val.name.toLowerCase().includes(search)
-                        )
-                        ?.map((el, key) => (
-                            <UserCard key={`${key}`} {...el} />
-                        ))}
-                </Flex>
-            </Container>
-        </Box>
+                        Who do you want to call?
+                    </Heading>
+                    <Flex
+                        alignItems={"center"}
+                        gap={"10px"}
+                        justifyContent={"center"}
+                        flexDirection={{
+                            sm: "column",
+                            md: "row"
+                        }}
+                    >
+                        <Text
+                            color={"#FFB7EB"}
+                            fontSize={{ base: "sm", sm: "lg" }}
+                        >
+                            Search your favorite user
+                        </Text>
+                        <InputGroup
+                            cursor="pointer"
+                            bg={"#AE3E7A"}
+                            borderRadius="15px"
+                            borderColor="#F178B8"
+                            w={{
+                                sm: "80%",
+                                md: "256px"
+                            }}
+                            mx={{ sm: "auto", md: "inherit" }}
+                            me={{ sm: "auto", md: "20px" }}
+                        >
+                            <InputLeftElement
+                                children={
+                                    <SearchIcon
+                                        color={"#FFF"}
+                                        w="15px"
+                                        h="15px"
+                                    />
+                                }
+                            />
+                            <Input
+                                fontSize="xs"
+                                py="11px"
+                                color={"gray.400"}
+                                placeholder="Type here..."
+                                borderRadius="inherit"
+                                value={search}
+                                onChange={(el) => setSearch(el.target.value)}
+                            />
+                        </InputGroup>
+                    </Flex>
+                </Stack>
+                <Container
+                    maxW={{
+                        base: "100%",
+                        lg: "80%",
+                        "2xl": "60%"
+                    }}
+                    mt={12}
+                >
+                    <Flex flexWrap="wrap" gridGap={"6px"} justify="center">
+                        {personas
+                            ?.filter((val) =>
+                                val.name.toLowerCase().includes(search)
+                            )
+                            ?.map((el, key) => (
+                                <UserCard key={`${key}`} {...el} />
+                            ))}
+                    </Flex>
+                </Container>
+            </Box>
+        </>
     )
 }
 
