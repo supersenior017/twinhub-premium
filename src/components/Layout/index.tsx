@@ -91,26 +91,25 @@ const Layout = ({ children }: LayoutProps) => {
                 autoClose={3000}
                 draggableDirection={"x"}
                 newestOnTop={false}
-                pauseOnHover
+                // pauseOnHover
+                hideProgressBar
                 toastStyle={{
-                    borderRadius: "1em",
-                    background: useColorModeValue(
-                        "white",
-                        "var(--chakra-colors-gray-800)"
-                    )
+                    borderRadius: "0.5em",
+                    background: "rgba(47, 54, 162, 0.9)"
+                    // useColorModeValue(
+                    //     "white",
+                    //     "var(--chakra-colors-gray-800)"
+                    // )
                 }}
-                progressStyle={{
-                    background: "rgba(2, 226, 150, 1)",
-                    boxShadow: "var(--chakra-shadows-md)",
-                    height: "0.6rem"
-                }}
+                // progressStyle={{
+                //     background: "rgba(2, 226, 150, 1)",
+                //     boxShadow: "var(--chakra-shadows-md)",
+                //     height: "0.6rem"
+                // }}
                 bodyStyle={{
                     fontFamily: "var(--chakra-fonts-heading)",
                     fontSize: "1.25em",
-                    color: useColorModeValue(
-                        "var(--chakra-colors-gray-700)",
-                        "white"
-                    )
+                    color: "#fff"
                 }}
                 position="bottom-right"
                 closeOnClick
