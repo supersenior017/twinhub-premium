@@ -34,12 +34,13 @@ import {
 } from "react-icons/fa"
 import { useGoogleLogin, GoogleLogin } from "@react-oauth/google"
 import Logo from "../../../assets/img/auth_logo.png"
+import tg_bot_icon from "../../../assets/img/icon_telegram_bot.png"
 
 const Login = () => {
     const navigate = useNavigate()
     const handleBackToHome = () => navigate("/")
     const titleColor = "white"
-    const textColor = "#BAA6FF"
+    const textColor = "#FFB7EB"
 
     const {
         handleSubmit,
@@ -197,7 +198,7 @@ const Login = () => {
                                     cursor="pointer"
                                     justify="center"
                                     align="center"
-                                    bg="rgb(19,21,54)"
+                                    bg="#9D2D65"
                                     w="71px"
                                     h="71px"
                                     borderRadius="15px"
@@ -221,7 +222,7 @@ const Login = () => {
                                     cursor="pointer"
                                     justify="center"
                                     align="center"
-                                    bg="rgb(19,21,54)"
+                                    bg="#9D2D65"
                                     w="71px"
                                     h="71px"
                                     borderRadius="15px"
@@ -266,7 +267,7 @@ const Login = () => {
                                     <Input
                                         id="email"
                                         color="white"
-                                        bg="rgb(19,21,54)"
+                                        bg="#9D2D65"
                                         border="transparent"
                                         borderRadius="20px"
                                         fontSize="sm"
@@ -308,7 +309,7 @@ const Login = () => {
                                     <Input
                                         id="password"
                                         color="white"
-                                        bg="rgb(19,21,54)"
+                                        bg="#9D2D65"
                                         border="transparent"
                                         borderRadius="20px"
                                         fontSize="sm"
@@ -337,7 +338,7 @@ const Login = () => {
                                 <DarkMode>
                                     <Switch
                                         id="remember-login"
-                                        colorScheme="brand"
+                                        colorScheme="pink"
                                         me="10px"
                                     />
                                 </DarkMode>
@@ -392,13 +393,20 @@ const Login = () => {
                         gap={"10px"}
                         mb={"20px"}
                     >
-                        <Text>Contact Us</Text>
-                        <Flex gap={"10px"} fontSize={"30px"} color={"#4C368D"}>
+                        <Text color={"#FFB7EB"}>Contact Us</Text>
+                        <Flex
+                            gap={"10px"}
+                            fontSize={"30px"}
+                            color={"rgba(183, 34, 123, 1)"}
+                        >
                             <a
                                 href="https://t.me/+w_GZc7AEtsxiM2Fh"
                                 target="_blank"
                             >
                                 <FaTelegram />
+                            </a>
+                            <a href="" target="_blank">
+                                <Image boxSize={"30px"} src={tg_bot_icon} />
                             </a>
                             <a
                                 href="https://discord.gg/DNjbDrFM"

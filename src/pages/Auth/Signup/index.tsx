@@ -34,10 +34,11 @@ import { useContext } from "react"
 import { parseJwt } from "utils/parseJWT"
 import { useGoogleLogin } from "@react-oauth/google"
 import Logo from "../../../assets/img/auth_logo.png"
+import tg_bot_icon from "../../../assets/img/icon_telegram_bot.png"
 
 const Signup = () => {
     const titleColor = "white"
-    const textColor = "gray.400"
+    const textColor = "#FFB7EB"
 
     const {
         handleSubmit,
@@ -193,7 +194,7 @@ const Signup = () => {
                             w="100%"
                             mx={{ base: "0px" }}
                             bg={{
-                                base: "rgb(19,21,56)"
+                                base: "#9D2D65"
                             }}
                         >
                             <Text
@@ -213,7 +214,7 @@ const Signup = () => {
                                         cursor="pointer"
                                         justify="center"
                                         align="center"
-                                        bg="rgb(19,21,54)"
+                                        bg="#9D2D65"
                                         w="71px"
                                         h="71px"
                                         borderRadius="15px"
@@ -237,7 +238,7 @@ const Signup = () => {
                                         cursor="pointer"
                                         justify="center"
                                         align="center"
-                                        bg="rgb(19,21,54)"
+                                        bg="#9D2D65"
                                         w="71px"
                                         h="71px"
                                         borderRadius="15px"
@@ -292,7 +293,7 @@ const Signup = () => {
                                             id="email"
                                             color={titleColor}
                                             bg={{
-                                                base: "rgb(19,21,54)"
+                                                base: "#9D2D65"
                                             }}
                                             border="transparent"
                                             borderRadius="20px"
@@ -340,7 +341,7 @@ const Signup = () => {
                                             id="password"
                                             color={titleColor}
                                             bg={{
-                                                base: "rgb(19,21,54)"
+                                                base: "#9D2D65"
                                             }}
                                             border="transparent"
                                             borderRadius="20px"
@@ -388,7 +389,7 @@ const Signup = () => {
                                             id="repassword"
                                             color={titleColor}
                                             bg={{
-                                                base: "rgb(19,21,54)"
+                                                base: "#9D2D65"
                                             }}
                                             border="transparent"
                                             borderRadius="20px"
@@ -432,7 +433,7 @@ const Signup = () => {
                                         <DarkMode>
                                             <Switch
                                                 id="remember-login"
-                                                colorScheme="brand"
+                                                colorScheme="pink"
                                                 me="10px"
                                             />
                                         </DarkMode>
@@ -490,13 +491,20 @@ const Signup = () => {
                         mt={"10px"}
                         mb={"20px"}
                     >
-                        <Text>Contact Us</Text>
-                        <Flex gap={"10px"} fontSize={"30px"} color={"#4C368D"}>
+                        <Text color={textColor}>Contact Us</Text>
+                        <Flex
+                            gap={"10px"}
+                            fontSize={"30px"}
+                            color={"rgba(183, 34, 123, 1)"}
+                        >
                             <a
                                 href="https://t.me/+w_GZc7AEtsxiM2Fh"
                                 target="_blank"
                             >
                                 <FaTelegram />
+                            </a>
+                            <a href="" target="_blank">
+                                <Image boxSize={"30px"} src={tg_bot_icon} />
                             </a>
                             <a
                                 href="https://discord.gg/DNjbDrFM"

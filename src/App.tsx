@@ -13,7 +13,6 @@ import { useEffect, useState } from "react"
 import {
     AppContext,
     BackendUrl,
-    CurrentVersion,
     GoogleAuthClientID,
     personaProps
 } from "./constants"
