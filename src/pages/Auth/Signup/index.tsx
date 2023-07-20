@@ -503,7 +503,7 @@ const Signup = () => {
                             >
                                 <FaTelegram />
                             </a>
-                            <a href="" target="_blank">
+                            <a href="https://t.me/twinhub_bot" target="_blank">
                                 <Image boxSize={"30px"} src={tg_bot_icon} />
                             </a>
                             <a

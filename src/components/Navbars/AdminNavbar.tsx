@@ -43,7 +43,9 @@ import {
     FaTelegram,
     FaMailBulk,
     FaCreditCard,
-    FaEnvelope
+    FaEnvelope,
+    FaMobile,
+    FaMobileAlt
 } from "react-icons/fa"
 import { AppContext, NavbarPosition } from "../../constants"
 import Logo from "../../assets/img/logo.png"
@@ -51,6 +53,7 @@ import { HamburgerIcon } from "@chakra-ui/icons"
 import IconBox from "components/Icons/IconBox"
 import SidebarResponsive from "components/Sidebar"
 import { googleLogout } from "@react-oauth/google"
+import influencer_ico from "../../assets/img/influencers.png"
 
 export default function AdminNavbar(props) {
     const navigate = useNavigate()
@@ -130,29 +133,64 @@ export default function AdminNavbar(props) {
             mx="auto"
             mt={secondaryMargin}
             pb="8px"
-            left={"10vw"}
+            left={{ sm: "1vw", md: "10vw" }}
             px={{
                 base: "5px",
                 md: "30px"
             }}
             pt="8px"
             top="18px"
-            w="80vw"
+            w={{
+                sm: "98vw",
+                md: "80vw"
+            }}
             zIndex={100}
         >
             <Flex w="100%" alignItems="center" justifyContent={"space-between"}>
-                <HStack>
+                <HStack gap={"16px"}>
                     <Image
                         src={Logo}
-                        height={"40px"}
-                        width={"auto"}
+                        height={"auto"}
+                        maxW={"128px"}
                         alt={logoText}
                         onClick={() => navigate("/")}
                         cursor={"pointer"}
                     />
-                    {/* <Text variant={"logoText"}>TwinHub</Text> */}
+                    <Button
+                        border={"1px solid #C150A8"}
+                        bgColor={"rgba(215, 35, 136, 0.40) !important"}
+                        gap={"4px"}
+                        as={"a"}
+                        href="https://call.twinhub.ai"
+                        target="_self"
+                        display={{
+                            sm: "none",
+                            md: "flex"
+                        }}
+                        boxShadow={"0px 4px 6px 0px rgba(185, 45, 124, 0.40)"}
+                    >
+                        <Image
+                            src={influencer_ico}
+                            bgColor={"#FF8ECF"}
+                            borderRadius={"full"}
+                            maxW={"32px"}
+                            h={"auto"}
+                        />
+                        <Text fontSize={"12px"} color={"#FFF"}>
+                            Influencers
+                        </Text>
+                    </Button>
                 </HStack>
                 <HStack gap={"10px"}>
+                    <Text
+                        display={{ sm: "none", md: "flex" }}
+                        alignItems={"center"}
+                        as={"a"}
+                        href="https://t.me/twinhubpremium_bot"
+                        target="_blank"
+                    >
+                        <FaMobileAlt /> Mobile App
+                    </Text>
                     <Text
                         onClick={() => navigate("/payment")}
                         display={{ sm: "none", md: "flex" }}

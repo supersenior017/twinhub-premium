@@ -9,9 +9,10 @@ import {
 } from "@chakra-ui/react"
 import { AppContext, BackendUrl, WebsocketURL } from "../../constants"
 import { RefObject, createRef, useContext, useEffect, useState } from "react"
-import { Navigate, useNavigate, useParams } from "react-router-dom"
+import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom"
 import AudioRecorder from "audio-recorder-polyfill"
 import Loader from "components/Loader"
+import toast from "react-toastify"
 import { PhoneIcon } from "@chakra-ui/icons"
 import {
     FaTelegram,
@@ -19,7 +20,8 @@ import {
     FaTiktok,
     FaYoutube,
     FaInstagram,
-    FaFacebook
+    FaFacebook,
+    FaShareAlt
 } from "react-icons/fa"
 import tg_bot_icon from "../../assets/img/icon_telegram_bot.png"
 
@@ -45,6 +47,8 @@ const Chatting = () => {
     const contextData = useContext(AppContext)
     const isAuthorized = contextData?.isAuthorized
     const user_id = contextData?.userId
+
+    const { pathname } = useLocation()
 
     let mediaRecorder: MediaRecorder
     let socket: WebSocket
@@ -307,6 +311,18 @@ const Chatting = () => {
                             </>
                         )}
                     </Flex>
+                    <IconButton
+                        aria-label="share"
+                        icon={<FaShareAlt />}
+                        borderColor={"#EB77B3"}
+                        bgColor={"#C83A83 !important"}
+                        onClick={() => {
+                            navigator.clipboard.writeText(window.location.href)
+                            // toast("Copied to clipboard", {
+                            //     position: "top-right"
+                            // })
+                        }}
+                    />
                 </Center>
                 <Flex
                     direction={"column"}
@@ -329,7 +345,7 @@ const Chatting = () => {
                         >
                             <FaTelegram />
                         </a>
-                        <a href="" target="_blank">
+                        <a href="https://t.me/twinhub_bot" target="_blank">
                             <Image boxSize={"30px"} src={tg_bot_icon} />
                         </a>
                         <a href="https://discord.gg/DNjbDrFM" target="_blank">
