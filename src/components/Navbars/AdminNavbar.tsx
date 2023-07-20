@@ -45,7 +45,8 @@ import {
     FaCreditCard,
     FaEnvelope,
     FaMobile,
-    FaMobileAlt
+    FaMobileAlt,
+    FaAngleRight
 } from "react-icons/fa"
 import { AppContext, NavbarPosition } from "../../constants"
 import Logo from "../../assets/img/logo.png"
@@ -158,7 +159,10 @@ export default function AdminNavbar(props) {
                     />
                     <Button
                         border={"1px solid #C150A8"}
-                        bgColor={"rgba(215, 35, 136, 0.40) !important"}
+                        // bgColor={"rgba(215, 35, 136, 0.40) !important"}
+                        bg={
+                            "linear-gradient(180deg, #633BA5 0%, #D059EE 100%) !important"
+                        }
                         gap={"4px"}
                         as={"a"}
                         href="https://call.twinhub.ai"
@@ -176,9 +180,10 @@ export default function AdminNavbar(props) {
                             maxW={"32px"}
                             h={"auto"}
                         />
-                        <Text fontSize={"12px"} color={"#FFF"}>
+                        <Text fontSize={"14px"} color={"#FFF"} fontWeight={400}>
                             Influencers
                         </Text>
+                        <FaAngleRight />
                     </Button>
                 </HStack>
                 <HStack gap={"10px"}>

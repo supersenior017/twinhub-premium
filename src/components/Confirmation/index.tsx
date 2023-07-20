@@ -57,18 +57,18 @@ const Confirmation = () => {
                         </Text>
                         <Text mt={"22px"} color={"#FFB7EB"}>
                             By entering this website, you confirm that you are
-                            18years old or more. By using the site, you agree to
-                            ourTerms of Service. Our privacy policy details how
-                            wecollect and use your data We use cookies for
-                            basicanalvtics and spam detection.All content on
-                            this websiteare Al-generated! Any generations that
-                            resemble realpeople are purely coincidental.
+                            18 years old or more. By using the site, you agree
+                            to our Terms of Service. Our privacy policy details
+                            how we collect and use your data We use cookies for
+                            basic analytics and spam detection.All content on
+                            this website are Al-generated! Any generations that
+                            resemble real people are purely coincidental.
                             <br />
                             <br />
-                            We use cookies to give you the best
-                            possibleexperience on our website. By continuing to
-                            browse, youare consenting to our use of cookies.
-                            Enjoy your visit!
+                            We use cookies to give you the best possible
+                            experience on our website. By continuing to browse,
+                            you are consenting to our use of cookies. Enjoy your
+                            visit!
                         </Text>
                     </ModalBody>
                     <ModalFooter>
