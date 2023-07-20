@@ -12,7 +12,7 @@ import PriceSlider from "./Components/PriceSlider"
 import { useContext, useEffect, useState } from "react"
 import { FcCheckmark } from "react-icons/fc"
 import { loadStripe } from "@stripe/stripe-js"
-import { AppContext, BackendUrl, CurrentVersion } from "../../constants"
+import { AppContext, BackendUrl } from "../../constants"
 import { Navigate, useLocation } from "react-router-dom"
 
 const Credits = () => {
@@ -98,7 +98,7 @@ const Credits = () => {
                     setSliderValue={(e) => setSliderValue(e)}
                 />
                 <Button
-                    bgColor="#667eea !important"
+                    bgColor="#9D2D65 !important"
                     color="#fff"
                     border="none"
                     borderRadius={5}
@@ -113,7 +113,7 @@ const Credits = () => {
                 <Text color={"#000"}>
                     Powered by{" "}
                     <Link
-                        color="blue"
+                        color="#9D2D65"
                         href="https://stripe.com"
                         target="_blank"
                     >

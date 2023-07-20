@@ -43,17 +43,14 @@ const Dashboard = () => {
                         md: "row"
                     }}
                 >
-                    <Text
-                        color={"gray.300"}
-                        fontSize={{ base: "sm", sm: "lg" }}
-                    >
+                    <Text color={"#FFB7EB"} fontSize={{ base: "sm", sm: "lg" }}>
                         Search your favorite user
                     </Text>
                     <InputGroup
                         cursor="pointer"
-                        bg={"#0F1535"}
+                        bg={"#AE3E7A"}
                         borderRadius="15px"
-                        borderColor="rgba(226, 232, 240, 0.3)"
+                        borderColor="#F178B8"
                         w={{
                             sm: "80%",
                             md: "256px"

@@ -6,7 +6,7 @@ const Card = {
         backdropFilter: "blur(120px)",
         width: "100%",
         borderRadius: "20px",
-        bg: "linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%)",
+        bg: "linear-gradient(127.09deg, rgba(157, 45, 101, 0.94) 19.41%, rgba(250, 155, 203, 0.49) 76.65%)",
         backgroundClip: "border-box"
     }
 }

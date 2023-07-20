@@ -21,6 +21,7 @@ import {
     FaInstagram,
     FaFacebook
 } from "react-icons/fa"
+import tg_bot_icon from "../../assets/img/icon_telegram_bot.png"
 
 window.MediaRecorder = AudioRecorder
 
@@ -316,13 +317,20 @@ const Chatting = () => {
                     mx={"auto"}
                     width={"100%"}
                 >
-                    <Text color={"#BAA6FF"}>Contact Us</Text>
-                    <Flex gap={"10px"} fontSize={"30px"} color={"#4C368D"}>
+                    <Text color={"#FFB7EB"}>Contact Us</Text>
+                    <Flex
+                        gap={"10px"}
+                        fontSize={"30px"}
+                        color={"rgba(183, 34, 123, 1)"}
+                    >
                         <a
                             href="https://t.me/+w_GZc7AEtsxiM2Fh"
                             target="_blank"
                         >
                             <FaTelegram />
+                        </a>
+                        <a href="" target="_blank">
+                            <Image boxSize={"30px"} src={tg_bot_icon} />
                         </a>
                         <a href="https://discord.gg/DNjbDrFM" target="_blank">
                             <FaDiscord />

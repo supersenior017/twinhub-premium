@@ -52,7 +52,7 @@ const PriceSlider = ({
                 <SliderMark
                     value={sliderValue}
                     textAlign="center"
-                    bg="blue.500"
+                    bg="#9D2D65"
                     color="white"
                     mt="-10"
                     ml="-5"
@@ -61,7 +61,7 @@ const PriceSlider = ({
                     ${(totalPrice * sliderValue) / 100}
                 </SliderMark>
                 <SliderTrack>
-                    <SliderFilledTrack />
+                    <SliderFilledTrack bgColor={"#9D2D65"} />
                 </SliderTrack>
                 <SliderThumb />
             </Slider>

@@ -45,16 +45,16 @@ export const buttonStyles =  {
                     py: "12px",
                     borderRadius: "15px",
                     _hover: {
-                        bg: "#667eea !important"
+                        bg: "rgba(227, 45, 121, 0.40) !important"
                     },
                     w: "inherit",
                     _active: {
-                        bg: "#667eea !important",
+                        bg: "rgba(227, 45, 121, 0.40) !important",
                         transform: "none",
                         borderColor: "transparent"
                     },
                     _focus: {
-                        bg: "#667eea !important",
+                        bg: "rgba(227, 45, 121, 0.40) !important",
                         boxShadow: "0px 7px 11px rgba(0, 0, 0, 0.04)"
                     }
                 },

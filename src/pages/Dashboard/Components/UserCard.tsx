@@ -55,7 +55,7 @@ const UserCard = ({ name, profile_pic_url, id }: personaProps) => {
                     border={"4px solid rgba(255, 255, 255, 0.16)"}
                 />
                 <Flex justifyContent={"space-between"} alignItems={"center"}>
-                    <Text size="md" textAlign={"center"} color={"#504D73"}>
+                    <Text size="md" textAlign={"center"} color={"#9B336C"}>
                         {name}
                     </Text>
                     <FaPhoneAlt />

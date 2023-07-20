@@ -2,7 +2,7 @@ export const bgAdmin = {
     styles: {
         global: (props) => ({
             body: {
-                bg: "linear-gradient(90deg, #667eea 0%, #764ba2 100%)",
+                bg: "linear-gradient(90deg, #D881B5 0%, #D34E8E 100%)",
                 bgSize: "cover",
                 bgPosition: "center center"
             },
