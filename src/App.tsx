@@ -1,5 +1,6 @@
 /* eslint-disable sonarjs/no-small-switch */
 import { ChakraProvider, useBreakpoint } from "@chakra-ui/react"
+
 import { BrowserRouter as Router, json } from "react-router-dom"
 import { MotionConfig } from "framer-motion"
 import { GoogleLogin, GoogleOAuthProvider } from "@react-oauth/google"
@@ -18,6 +19,7 @@ import {
 } from "./constants"
 import Loader from "components/Loader"
 import { parseJwt } from "utils/parseJWT"
+import Confirmation from "components/Confirmation"
 
 const withAuthorization = (WrappedComponent) => {
     const AuthorizedComponent = () => {
@@ -134,6 +136,7 @@ const App = () => {
                     </Layout>
                 </MotionConfig>
             </Router>
+            <Confirmation />
         </ChakraProvider>
     )
 }

@@ -1,46 +1,90 @@
-import React from "react"
+import React, { RefObject, useEffect } from "react"
 import {
     useDisclosure,
-    AlertDialog,
-    AlertDialogOverlay,
-    AlertDialogContent,
-    AlertDialogCloseButton,
-    AlertDialogBody,
-    AlertDialogHeader,
-    AlertDialogFooter,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalCloseButton,
+    ModalFooter,
+    ModalBody,
+    Text,
     Button
 } from "@chakra-ui/react"
 
 const Confirmation = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
-    const cancelRef = React.useRef()
+
+    useEffect(() => onOpen(), [])
+
+    console.log("confirm render")
 
     return (
         <>
-            {/* // <AlertDialog
-        //     motionPreset="slideInBottom"
-        //     leastDestructiveRef={cancelRef}
-        //     onClose={onClose}
-        //     isOpen={isOpen}
-        //     isCentered
-        // >
-        //     <AlertDialogOverlay />
+            <Modal
+                isCentered
+                isOpen={isOpen}
+                onClose={onClose}
+                scrollBehavior="inside"
+            >
+                <ModalOverlay
+                    bg="blackAlpha.300"
+                    backdropFilter="blur(10px) hue-rotate(30deg)"
+                />
 
-        //     <AlertDialogContent>
-        //         <AlertDialogHeader>Discard Changes?</AlertDialogHeader>
-        //         <AlertDialogCloseButton />
-        //         <AlertDialogBody>
-        //             Are you sure you want to discard all of your notes? 44 words
-        //             will be deleted.
-        //         </AlertDialogBody>
-        //         <AlertDialogFooter>
-        //             <Button onClick={onClose}>No</Button>
-        //             <Button colorScheme="red" ml={3}>
-        //                 Yes
-        //             </Button>
-        //         </AlertDialogFooter>
-        //     </AlertDialogContent>
-        // </AlertDialog> */}
+                <ModalContent bg={"#340A21"} borderRadius={"20px"} px={"22px"}>
+                    <ModalHeader textAlign={"center"} py={"30px"}>
+                        <Text
+                            fontSize={"26px"}
+                            fontWeight={700}
+                            background={
+                                "linear-gradient(90deg, #4F56FA 0%, #FF5FBA 100%)"
+                            }
+                            backgroundClip={"text"}
+                            css={{
+                                WebkitBackgroundClip: "text",
+                                WebkitTextFillColor: "transparent"
+                            }}
+                        >
+                            Warning 18+
+                        </Text>
+                    </ModalHeader>
+                    <ModalBody textAlign={"center"}>
+                        <Text color={"#FFF"}>
+                            This site is for adults only!
+                            <br />
+                            It contains Al-generated adult content.
+                        </Text>
+                        <Text mt={"22px"} color={"#FFB7EB"}>
+                            By entering this website, you confirm that you are
+                            18years old or more. By using the site, you agree to
+                            ourTerms of Service. Our privacy policy details how
+                            wecollect and use your data We use cookies for
+                            basicanalvtics and spam detection.All content on
+                            this websiteare Al-generated! Any generations that
+                            resemble realpeople are purely coincidental.
+                            <br />
+                            <br />
+                            We use cookies to give you the best
+                            possibleexperience on our website. By continuing to
+                            browse, youare consenting to our use of cookies.
+                            Enjoy your visit!
+                        </Text>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button
+                            bgColor={"#E32D79 !important"}
+                            borderRadius={"18px"}
+                            width={"full"}
+                            onClick={onClose}
+                        >
+                            Agree and Continue
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </>
     )
 }
+
+export default Confirmation
