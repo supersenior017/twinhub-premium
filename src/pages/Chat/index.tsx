@@ -323,7 +323,9 @@ const Chatting = () => {
                         borderColor={"#EB77B3"}
                         bgColor={"#C83A83 !important"}
                         onClick={() => {
-                            navigator.clipboard.writeText(window.location.href)
+                            navigator.clipboard.writeText(
+                                `Check out this new AI ${personalData?.name} I just found! Call at ${window.location.href}`
+                            )
                             // toast("Copied to clipboard", {
                             //     position: "top-right"
                             // })
