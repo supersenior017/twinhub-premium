@@ -13,7 +13,7 @@ export const textStyles = {
             },
             baseStyle: {
                 color: "#F0F0F0",
-                cursor: "pointer"
+                cursor: "pointer",
             }
         }
     }

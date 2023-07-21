@@ -48,7 +48,7 @@ const Chatting = () => {
     const isAuthorized = contextData?.isAuthorized
     const user_id = contextData?.userId
 
-    const { pathname } = useLocation()
+    const [isHidden, setIsHidden] = useState<boolean>(true)
 
     let mediaRecorder: MediaRecorder
     let socket: WebSocket
@@ -321,8 +321,22 @@ const Chatting = () => {
                             // toast("Copied to clipboard", {
                             //     position: "top-right"
                             // })
+                            setIsHidden(false)
+                            setTimeout(() => setIsHidden(true), 3000)
                         }}
                     />
+                    <Text
+                        hidden={isHidden}
+                        position={"fixed"}
+                        bottom={"16vh"}
+                        bgColor={"rgba(0, 0, 0, 0.60)"}
+                        borderRadius={"6px"}
+                        px={"10px"}
+                        py={"6px"}
+                    >
+                        The link has been copied, please share with your
+                        friends!
+                    </Text>
                 </Center>
                 <Flex
                     direction={"column"}

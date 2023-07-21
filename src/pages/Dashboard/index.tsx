@@ -85,6 +85,9 @@ const Dashboard = () => {
                                 borderRadius="inherit"
                                 value={search}
                                 onChange={(el) => setSearch(el.target.value)}
+                                _placeholder={{
+                                    color: "rgba(255, 255, 255, 0.60)"
+                                }}
                             />
                         </InputGroup>
                     </Flex>
