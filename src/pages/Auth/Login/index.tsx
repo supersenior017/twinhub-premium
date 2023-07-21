@@ -411,7 +411,10 @@ const Login = () => {
                             >
                                 <FaTelegram />
                             </a>
-                            <a href="https://t.me/twinhub_bot" target="_blank">
+                            <a
+                                href="https://t.me/twinhubpremium_bot"
+                                target="_blank"
+                            >
                                 <Image boxSize={"30px"} src={tg_bot_icon} />
                             </a>
                             <a

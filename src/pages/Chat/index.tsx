@@ -356,6 +356,18 @@ const Chatting = () => {
                     mx={"auto"}
                     width={"100%"}
                 >
+                    <Button
+                        bgColor={"rgba(200, 58, 131, 0.6) !important"}
+                        borderColor={"#ED8BBE"}
+                        fontSize={"14px"}
+                        fontWeight={500}
+                        h={"32px"}
+                        as={"a"}
+                        href="https://t.me/twinhubpremium_bot"
+                        target="_blank"
+                    >
+                        Open in app
+                    </Button>
                     <Text color={"#FFB7EB"}>Contact Us</Text>
                     <Flex
                         gap={"10px"}
@@ -368,7 +380,10 @@ const Chatting = () => {
                         >
                             <FaTelegram />
                         </a>
-                        <a href="https://t.me/twinhub_bot" target="_blank">
+                        <a
+                            href="https://t.me/twinhubpremium_bot"
+                            target="_blank"
+                        >
                             <Image boxSize={"30px"} src={tg_bot_icon} />
                         </a>
                         <a href="https://discord.gg/DNjbDrFM" target="_blank">
