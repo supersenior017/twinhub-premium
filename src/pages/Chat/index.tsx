@@ -44,6 +44,8 @@ const Chatting = () => {
     const [isRecording, setIsRecording] = useState(false)
     const navigate = useNavigate()
 
+    const { pathname } = useLocation()
+
     const contextData = useContext(AppContext)
     const isAuthorized = contextData?.isAuthorized
     const user_id = contextData?.userId
@@ -380,12 +382,12 @@ const Chatting = () => {
                         >
                             <FaTelegram />
                         </a>
-                        <a
+                        {/* <a
                             href="https://t.me/twinhubpremium_bot"
                             target="_blank"
                         >
                             <Image boxSize={"30px"} src={tg_bot_icon} />
-                        </a>
+                        </a> */}
                         <a href="https://discord.gg/DNjbDrFM" target="_blank">
                             <FaDiscord />
                         </a>
@@ -418,7 +420,7 @@ const Chatting = () => {
             </>
         )
     ) : (
-        <Navigate to={"/login"} />
+        <Navigate to={`/login?forward=${pathname}`} />
     )
 }
 
