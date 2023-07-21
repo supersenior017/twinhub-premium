@@ -283,6 +283,9 @@ const Login = () => {
                                                 message: "Invalid email address"
                                             }
                                         })}
+                                        _placeholder={{
+                                            color: "rgba(255, 255, 255, 0.60)"
+                                        }}
                                     />
                                 </GradientBorder>
                                 {errors.email && (
@@ -326,6 +329,9 @@ const Login = () => {
                                                     "Minimum length should be 8"
                                             }
                                         })}
+                                        _placeholder={{
+                                            color: "rgba(255, 255, 255, 0.60)"
+                                        }}
                                     />
                                 </GradientBorder>
                                 {errors.password && (
@@ -466,7 +472,7 @@ const Login = () => {
                         <Image src={Logo} alt="TwinHub" />
                         <Text
                             textAlign="center"
-                            color="#7A8AEE"
+                            color="#BB85FF"
                             letterSpacing="8px"
                             fontSize="16px"
                             fontWeight="500"
@@ -477,13 +483,14 @@ const Login = () => {
                         <Text
                             mt={"10.8px"}
                             textAlign="center"
-                            color="transparent"
+                            // color="transparent"
+                            color={"#FFF"}
                             letterSpacing="5.12px"
                             fontSize="25.6px"
                             fontWeight="500"
                             lineHeight={"normal"}
-                            bgClip="text !important"
-                            bg="linear-gradient(94.56deg, #FFFFFF 79.99%, #21242F 102.65%)"
+                            // bgClip="text !important"
+                            // bg="linear-gradient(94.56deg, #FFFFFF 79.99%, #21242F 102.65%)"
                         >
                             The world’s most engaging AI
                             <br />
