@@ -44,6 +44,8 @@ const Chatting = () => {
     const [isRecording, setIsRecording] = useState(false)
     const navigate = useNavigate()
 
+    const { pathname } = useLocation()
+
     const contextData = useContext(AppContext)
     const isAuthorized = contextData?.isAuthorized
     const user_id = contextData?.userId
@@ -323,7 +325,9 @@ const Chatting = () => {
                         borderColor={"#EB77B3"}
                         bgColor={"#C83A83 !important"}
                         onClick={() => {
-                            navigator.clipboard.writeText(window.location.href)
+                            navigator.clipboard.writeText(
+                                `Check out this new AI ${personalData?.name} I just found! Call at ${window.location.href}`
+                            )
                             // toast("Copied to clipboard", {
                             //     position: "top-right"
                             // })
@@ -354,6 +358,18 @@ const Chatting = () => {
                     mx={"auto"}
                     width={"100%"}
                 >
+                    <Button
+                        bgColor={"rgba(200, 58, 131, 0.6) !important"}
+                        borderColor={"#ED8BBE"}
+                        fontSize={"14px"}
+                        fontWeight={500}
+                        h={"32px"}
+                        as={"a"}
+                        href="https://t.me/twinhubpremium_bot"
+                        target="_blank"
+                    >
+                        Open in app
+                    </Button>
                     <Text color={"#FFB7EB"}>Contact Us</Text>
                     <Flex
                         gap={"10px"}
@@ -366,9 +382,12 @@ const Chatting = () => {
                         >
                             <FaTelegram />
                         </a>
-                        <a href="https://t.me/twinhub_bot" target="_blank">
+                        {/* <a
+                            href="https://t.me/twinhubpremium_bot"
+                            target="_blank"
+                        >
                             <Image boxSize={"30px"} src={tg_bot_icon} />
-                        </a>
+                        </a> */}
                         <a href="https://discord.gg/DNjbDrFM" target="_blank">
                             <FaDiscord />
                         </a>
@@ -401,7 +420,7 @@ const Chatting = () => {
             </>
         )
     ) : (
-        <Navigate to={"/login"} />
+        <Navigate to={`/login?forward=${pathname}`} />
     )
 }
 
