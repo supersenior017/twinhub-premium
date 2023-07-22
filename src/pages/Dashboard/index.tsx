@@ -17,7 +17,7 @@ import { useContext, useEffect, useState } from "react"
 import { SearchIcon } from "@chakra-ui/icons"
 import { AppContext, BackendUrl, personaProps } from "../../constants"
 import Loader from "components/Loader"
-import Confirmation from "components/Confirmation"
+import { Present } from "../../components/Confirmation"
 
 const Dashboard = () => {
     const [search, setSearch] = useState("")
@@ -25,6 +25,7 @@ const Dashboard = () => {
     const contextData = useContext(AppContext)
     console.log("isAuth: ", contextData?.isAuthorized)
     const personas = contextData?.personas
+    const showPresent = contextData?.showPresent
 
     return (
         <>
@@ -111,6 +112,7 @@ const Dashboard = () => {
                     </Flex>
                 </Container>
             </Box>
+            {showPresent && <Present />}
         </>
     )
 }
