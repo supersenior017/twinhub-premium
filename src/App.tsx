@@ -19,7 +19,7 @@ import {
 } from "./constants"
 import Loader from "components/Loader"
 import { parseJwt } from "utils/parseJWT"
-import Confirmation from "components/Confirmation"
+import { NSFW } from "./components/Confirmation"
 
 const withAuthorization = (WrappedComponent) => {
     const AuthorizedComponent = () => {
@@ -27,6 +27,7 @@ const withAuthorization = (WrappedComponent) => {
         const [personas, setPersonas] = useState<personaProps[]>([])
         const [isLoading, setIsLoading] = useState(true)
         const [userId, setUserId] = useState(0)
+        const [showPresent, setShowPresent] = useState(false)
 
         useEffect(() => {
             const checkTokenAuthorization = async () => {
@@ -93,9 +94,11 @@ const withAuthorization = (WrappedComponent) => {
                         isAuthorized,
                         personas,
                         userId,
+                        showPresent,
                         setAuthorized: (e) => setIsAuthorized(e),
                         setPersonas: (e) => setPersonas(e),
-                        setUserId: (e) => setUserId(e)
+                        setUserId: (e) => setUserId(e),
+                        setShowPresent: (e) => setShowPresent(e)
                     }}
                 >
                     {isLoading ? <Loader /> : <WrappedComponent />}
@@ -136,7 +139,7 @@ const App = () => {
                     </Layout>
                 </MotionConfig>
             </Router>
-            <Confirmation />
+            <NSFW />
         </ChakraProvider>
     )
 }
